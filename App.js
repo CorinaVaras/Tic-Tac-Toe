@@ -43,6 +43,24 @@ export default class App extends  React.Component {
 
     })
   }
+
+  checkDraw = () => {
+    const num_tiles = 3
+    let arr = this.state.gameState
+
+    for (let i=0; i < num_tiles ; i++) {
+      if (arr[0][i] === 0) {
+        return 0;
+      } else if (arr[1][i] === 0) {
+        return 0;
+      } else if (arr[2][i] === 0) {
+        return 0;
+      }
+    }
+    return 1;
+
+  }
+
   // returns 1 if player 1 won, -1 if player 2 won, or a 0 if no one has won
   getWinner = () => {
     let sum;
@@ -99,16 +117,22 @@ export default class App extends  React.Component {
     // Check for winners... 
     let winner = this.getWinner();
     if(winner === 1){
-      Alert.alert('El ganador es el jugador 1');
+      Alert.alert('El ganador es el Duck');
       this.inicializeGame();
     } else if (winner === -1){
-      Alert.alert('El ganador es el jugador 2');
+      Alert.alert('El ganador es el Fish');
+      this.inicializeGame();
+    }
+    // Check Draw
+    let draw = this.checkDraw()
+    if (draw === 1) {
+      Alert.alert('Empate!')
       this.inicializeGame();
     }
 
   }
 
-  onNewGamePress = () => {
+  playAgain = () => {
     this.inicializeGame();
   }
 
@@ -116,22 +140,32 @@ export default class App extends  React.Component {
   renderIcon = (row,col) => {
     let value= this.state.gameState[row][col];
     switch(value){
-      case 1: return <Icon name='duck' style={styles.tileX}/>;
-      case -1: return <Icon name='fish' style={styles.tileO}/>;
+      case 1: return <Icon name='duck' style={styles.duck}/>;
+      case -1: return <Icon name='fish' style={styles.fish}/>;
       default: <View/>
     }
+  
+  }
 
-
+  renderGamerCurrent = () => {
+    let currentPlayer = this.state.currentPlayer
+    switch(currentPlayer) {
+      case 1: return <View style={styles.player} ><Text style={styles.playerDuck}> Jugador 1 </Text><Icon name='duck' style={styles.duckIcon}/></View>;
+      case -1: return <View style={styles.player} ><Text style={styles.playerFish}> Jugador 2 </Text><Icon name='fish'style={styles.fishIcon}/></View>;
+    }
   }
 
 
   render() {
     return (
-      <ImageBackground
-            source={require("./assets/reactnative.jpg")}
-            style={styles.container}>
       
-        <View>  
+      <ImageBackground source={require("./assets/reactnative.jpg")} style={styles.container}>
+
+        <View style={styles.containerGameCurrent}>
+          <Text style={styles.gamerCurrent}>Turno de:</Text>
+          {this.renderGamerCurrent()}
+        </View>
+        <View style={{ backgroundColor: 'rgba(255,255,255,0.4)'}}>  
         <View style={{flexDirection: 'row'}}>  
             <TouchableOpacity onPress={() => this.onTilePress(0,0)} style={[styles.tile, { borderLeftWidth: 0, borderTopWidth: 0,alignItems: 'center',justifyContent: 'center'}]}>
               {this.renderIcon(0,0)}
@@ -170,13 +204,14 @@ export default class App extends  React.Component {
         </View> 
 
         
-        <TouchableOpacity style={styles.button} onPress={this.onNewGamePress}>
+        <TouchableOpacity style={styles.button} onPress={this.playAgain}>
           <Text style={styles.text}> Reiniciar partida</Text>
         </TouchableOpacity>
 
       
       </ImageBackground>
-    
+      
+        
     );
   }
 }
@@ -187,27 +222,27 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   tile: {
     borderWidth: 3,
     width: 100,
     height: 100,
-    borderColor: '#5BC0EB'
+    borderColor: '#DEE3E2'
 
   },
-  tileX: {
-    color: '#F58F29',
+
+  duck: {
+    color: '#DE7119',
     fontSize: 60,
   },
-  tileO: {
-    color: '#54F2F2',
-    fontSize: 65,
+  
+  fish: {
+    color: '#116979',
+    fontSize: 70,
     
   },
-  reset:{
-    marginTop: 80,
-  },
-
+  
   text: {
     fontSize: 20,
     textTransform: 'uppercase',
@@ -220,6 +255,44 @@ const styles = StyleSheet.create({
     padding: 15,
 
   },
+  containerGameCurrent: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingBottom: 62,
+    alignItems: 'center',
+},
+  gamerCurrent: {
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  player: {
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    padding: 5, 
+},
+
+playerDuck: {
+  fontSize: 28,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center'
+},
+playerFish: {
+    fontSize: 28,
+    display: 'flex',
+    flexDirection: 'row',
+},
+duckIcon: {
+  color: '#DE7119',
+  fontSize: 40,
+},
+
+fishIcon: {
+  color: '#116979',
+  fontSize: 40,
+  
+},
 });
 
 
