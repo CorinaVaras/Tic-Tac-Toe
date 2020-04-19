@@ -368,13 +368,13 @@ const styles = StyleSheet.create({
   },
 
   playerNemo: {
-    width: 110,
-    height:70,
+    width: 93,
+    height:58,
   
   },
   playerOrca: {
-    width: 125,
-    height:70,
+    width: 105,
+    height:60,
    
   },
  
