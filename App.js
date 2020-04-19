@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Alert, ImageBackground} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Alert, ImageBackground, Image} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -170,13 +170,19 @@ export default class App extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require('./assets/reactnative.jpg')}
+        source={require('./assets/fondo.png')}
         style={styles.container}>
+
+        <View style={styles.containerLogo}>
+        <Image source={require('./assets/img2.png')} />
+        </View>  
+        
         <View style={styles.containerGameCurrent}>
           <Text style={styles.gamerCurrent}>Turno de:</Text>
           {this.renderGamerCurrent()}
         </View>
-        <View style={{backgroundColor: 'rgba(255,255,255,0.4)'}}>
+        <View style={{padding: 15, borderRadius: 20, backgroundColor: '#FFFFFF' }}>
+        <View style={{ padding: 15,backgroundColor: '#FFFFFF', boxShadow:'rgba(0, 0, 0, 0.25)', borderRadius: 20, borderStyle: 'dashed', borderColor:'#7997B5', borderWidth: 2}}>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
               onPress={() => this.onTilePress(0, 0)}
@@ -294,9 +300,10 @@ export default class App extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
+        </View>
 
-        <TouchableOpacity style={styles.button} onPress={this.playAgain}>
-          <Text style={styles.text}>Volver a jugar</Text>
+        <TouchableOpacity onPress={this.playAgain}>
+          <Image style={styles.button} source={require('./assets/boton_start.png')} />
         </TouchableOpacity>
       </ImageBackground>
     );
@@ -309,11 +316,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerLogo:{
+    display: 'flex',
+    justifyContent: 'flex-start',
+    width: '80%',
+    marginBottom: 60
+  },
+ 
   tile: {
-    borderWidth: 3,
-    width: 100,
-    height: 100,
-    borderColor: '#DEE3E2',
+    borderWidth: 1,
+    width: 85,
+    height: 75,
+    borderColor: '#7997B5',
   },
 
   duck: {
@@ -332,10 +346,11 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   button: {
-    marginTop: 65,
+    marginTop: 85,
     alignItems: 'center',
-    backgroundColor: '#E8F1F2',
-    padding: 15,
+    width: 150,
+    height: 50
+    
   },
   containerGameCurrent: {
     display: 'flex',
@@ -346,6 +361,7 @@ const styles = StyleSheet.create({
   gamerCurrent: {
     fontSize: 30,
     fontWeight: 'bold',
+    // fontFamily: 'Vibur-Regular'
   },
   player: {
     display: 'flex',
