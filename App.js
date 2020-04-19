@@ -117,7 +117,7 @@ export default class App extends React.Component {
     // Check for winners...
     let winner = this.getWinner();
     if (winner === 1) {
-      Alert.alert('Ganó NEMO!!');
+      Alert.alert('Ganó El CANGREJO!!');
       this.inicializeGame();
     } else if (winner === -1) {
       Alert.alert('Ganó El TIBURON!!');
@@ -139,7 +139,7 @@ export default class App extends React.Component {
     let value = this.state.gameState[row][col];
     switch (value) {
       case 1:
-        return <Image source={require('./assets/nose.png')} />
+        return <Image source={require('./assets/cangrejo.png')} />
       case -1:
         return <Image source={require('./assets/orca.png')} />
       default:
@@ -153,7 +153,7 @@ export default class App extends React.Component {
       case 1:
         return (
           <View style={styles.player}>
-            <Image source={require('./assets/nose.png')} />
+            <Image source={require('./assets/cangrejo.png')} />
           </View>
         );
       case -1:
