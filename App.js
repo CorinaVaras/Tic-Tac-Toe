@@ -139,7 +139,7 @@ export default class App extends React.Component {
     let value = this.state.gameState[row][col];
     switch (value) {
       case 1:
-        return <Image source={require('./assets/nemo.png')} />
+        return <Image source={require('./assets/nose.png')} />
       case -1:
         return <Image source={require('./assets/orca.png')} />
       default:
@@ -153,15 +153,13 @@ export default class App extends React.Component {
       case 1:
         return (
           <View style={styles.player}>
-            {/* <Text style={styles.playerDuck}> Jugador 1 </Text> */}
-            <Image source={require('./assets/nemo.png')} style={styles.playerNemo}  />
+            <Image source={require('./assets/nose.png')} />
           </View>
         );
       case -1:
         return (
           <View style={styles.player}>
-            {/* <Text style={styles.playerFish}> Jugador 2 </Text> */}
-            <Image source={require('./assets/orca.png')} style={styles.playerOrca}/>
+            <Image source={require('./assets/orca.png')}/>
           </View>
         );
     }
@@ -320,27 +318,22 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-start',
     width: '80%',
-    marginBottom: 60,
+    marginBottom: 40,
   },
   logo:{
-    width: 200,
-    height: 60,
+    width: 175,
+    height: 45,
   },
  
   tile: {
     borderWidth: 1,
-    width: 85,
-    height: 75,
+    width: 80,
+    height: 70,
     borderColor: '#7997B5',
   },
 
-  text: {
-    fontSize: 20,
-    textTransform: 'uppercase',
-    color: 'black',
-  },
   button: {
-    marginTop: 85,
+    marginTop: 40,
     alignItems: 'center',
     width: 150,
     height: 50
@@ -349,7 +342,7 @@ const styles = StyleSheet.create({
   containerGameCurrent: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 85,
+    marginBottom: 50,
     alignItems: 'center',
     
   },
@@ -367,15 +360,6 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
 
-  playerNemo: {
-    width: 93,
-    height:58,
   
-  },
-  playerOrca: {
-    width: 105,
-    height:60,
-   
-  },
  
 });
