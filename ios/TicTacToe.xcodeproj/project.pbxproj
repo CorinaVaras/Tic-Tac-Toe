@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TicTacToeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TicTacToeTests.m */; };
+		08BBD886AA8A4A30BF086B92 /* Vibur-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E027AD3DCCE743048586A5D8 /* Vibur-Regular.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -65,6 +66,7 @@
 		3BEABDEE04782A908FC2A06E /* Pods-TicTacToe-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TicTacToe-tvOSTests/Pods-TicTacToe-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		3DFBCC2802744CDC8D3B075E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		43DF179FB28E4E1292ED4872 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		4685C37A244CD298007602E2 /* Vibur-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vibur-Regular.ttf"; sourceTree = "<group>"; };
 		4DC78CB822725137C0E5235E /* Pods-TicTacToe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.debug.xcconfig"; path = "Target Support Files/Pods-TicTacToe/Pods-TicTacToe.debug.xcconfig"; sourceTree = "<group>"; };
 		5211899661203202A6DB3874 /* libPods-TicTacToe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TicTacToe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5539D72A85DC486A9C568052 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		D0B9AC051A9D4AEFAC03BF93 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		D2FD3E5F431C47338BC292FD /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		D3542661F66306CA86E98B16 /* libPods-TicTacToe-TicTacToeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TicTacToe-TicTacToeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E027AD3DCCE743048586A5D8 /* Vibur-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Vibur-Regular.otf"; path = "../assets/fonts/Vibur-Regular.otf"; sourceTree = "<group>"; };
 		E3980A218766B5CD43719D99 /* libPods-TicTacToe-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TicTacToe-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -200,11 +203,13 @@
 				F9AC3B9E24714FDA89934CF1 /* MaterialCommunityIcons.ttf */,
 				5ABC34172FE94B099D1BB5E9 /* MaterialIcons.ttf */,
 				D2FD3E5F431C47338BC292FD /* Octicons.ttf */,
+				4685C37A244CD298007602E2 /* Vibur-Regular.ttf */,
 				D0B9AC051A9D4AEFAC03BF93 /* Roboto_medium.ttf */,
 				5FB58C031E004A3FA0A0F5BD /* Roboto.ttf */,
 				608906F6EC6A4297B282C9CF /* rubicon-icon-font.ttf */,
 				0B0F2B60E67F4AB1ADA2FFCE /* SimpleLineIcons.ttf */,
 				5A3270DC52764ADB8A4C12A4 /* Zocial.ttf */,
+				E027AD3DCCE743048586A5D8 /* Vibur-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				08BBD886AA8A4A30BF086B92 /* Vibur-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;

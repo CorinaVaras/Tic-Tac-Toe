@@ -117,10 +117,10 @@ export default class App extends React.Component {
     // Check for winners...
     let winner = this.getWinner();
     if (winner === 1) {
-      Alert.alert('El ganador es el Duck');
+      Alert.alert('Ganó NEMO!!');
       this.inicializeGame();
     } else if (winner === -1) {
-      Alert.alert('El ganador es el Fish');
+      Alert.alert('Ganó El TIBURON!!');
       this.inicializeGame();
     }
     // Check Draw
@@ -139,9 +139,9 @@ export default class App extends React.Component {
     let value = this.state.gameState[row][col];
     switch (value) {
       case 1:
-        return <Icon name="duck" style={styles.duck} />;
+        return <Image source={require('./assets/nemo.png')} />
       case -1:
-        return <Icon name="fish" style={styles.fish} />;
+        return <Image source={require('./assets/orca.png')} />
       default:
         <View />;
     }
@@ -153,15 +153,15 @@ export default class App extends React.Component {
       case 1:
         return (
           <View style={styles.player}>
-            <Text style={styles.playerDuck}> Jugador 1 </Text>
-            <Icon name="duck" style={styles.duckIcon} />
+            {/* <Text style={styles.playerDuck}> Jugador 1 </Text> */}
+            <Image source={require('./assets/nemo.png')} style={styles.playerNemo}  />
           </View>
         );
       case -1:
         return (
           <View style={styles.player}>
-            <Text style={styles.playerFish}> Jugador 2 </Text>
-            <Icon name="fish" style={styles.fishIcon} />
+            {/* <Text style={styles.playerFish}> Jugador 2 </Text> */}
+            <Image source={require('./assets/orca.png')} style={styles.playerOrca}/>
           </View>
         );
     }
@@ -174,11 +174,11 @@ export default class App extends React.Component {
         style={styles.container}>
 
         <View style={styles.containerLogo}>
-        <Image source={require('./assets/img2.png')} />
+        <Image style={styles.logo}source={require('./assets/img2.png')} />
         </View>  
         
         <View style={styles.containerGameCurrent}>
-          <Text style={styles.gamerCurrent}>Turno de:</Text>
+          <Text style={styles.gamerCurrent}>Es el turno de</Text>
           {this.renderGamerCurrent()}
         </View>
         <View style={{padding: 15, borderRadius: 20, backgroundColor: '#FFFFFF' }}>
@@ -320,7 +320,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-start',
     width: '80%',
-    marginBottom: 60
+    marginBottom: 60,
+  },
+  logo:{
+    width: 200,
+    height: 60,
   },
  
   tile: {
@@ -328,16 +332,6 @@ const styles = StyleSheet.create({
     width: 85,
     height: 75,
     borderColor: '#7997B5',
-  },
-
-  duck: {
-    color: '#DE7119',
-    fontSize: 60,
-  },
-
-  fish: {
-    color: '#116979',
-    fontSize: 70,
   },
 
   text: {
@@ -357,39 +351,31 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 85,
     alignItems: 'center',
+    
   },
   gamerCurrent: {
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
-    // fontFamily: 'Vibur-Regular'
+    fontFamily: 'Vibur',
+    color: '#198EA4',
   },
   player: {
     display: 'flex',
     flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.2)',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 5,
-    marginLeft: 5,
+    marginLeft: 15
   },
 
-  playerDuck: {
-    fontSize: 28,
-    display: 'flex',
-    flexDirection: 'row',
+  playerNemo: {
+    width: 110,
+    height:70,
+  
   },
-  playerFish: {
-    fontSize: 28,
-    display: 'flex',
-    flexDirection: 'row',
+  playerOrca: {
+    width: 125,
+    height:70,
+   
   },
-  duckIcon: {
-    color: '#DE7119',
-    fontSize: 40,
-  },
-
-  fishIcon: {
-    color: '#116979',
-    fontSize: 45,
-  },
+ 
 });
