@@ -16,6 +16,6 @@ para Android e iOS usando JavaScript y React.
 
 ## Producto Final
 
-![tictactoe](./assets/video.gif)
+![](./assets/video.gif)
 
 
