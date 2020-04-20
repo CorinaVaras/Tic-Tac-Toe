@@ -19,10 +19,6 @@ Este proyecto fue construido con React Native la cual es una herramienta que nos
   
 ![](./assets/orca.png) ![](./assets/cangrejo.png)
 #
-### Interfaz del juego
-#
-![](./assets/iphone.png) 
-
 
 ## Ejemplo de uso 
 #
