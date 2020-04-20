@@ -21,7 +21,7 @@ Este proyecto fue construido con React Native la cual es una herramienta que nos
 #
 
 ## Ejemplo de uso 
-#
+
 ![tictactoe](./assets/video.gif)
 
 
