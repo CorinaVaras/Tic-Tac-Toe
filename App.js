@@ -7,11 +7,16 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Alert, ImageBackground, Image} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  Alert,
+  ImageBackground,
+  Image,
+} from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-Icon.loadFont();
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -139,9 +144,9 @@ export default class App extends React.Component {
     let value = this.state.gameState[row][col];
     switch (value) {
       case 1:
-        return <Image source={require('./assets/cangrejo.png')} />
+        return <Image source={require('./assets/cangrejo.png')} />;
       case -1:
-        return <Image source={require('./assets/orca.png')} />
+        return <Image source={require('./assets/orca.png')} />;
       default:
         <View />;
     }
@@ -159,7 +164,7 @@ export default class App extends React.Component {
       case -1:
         return (
           <View style={styles.player}>
-            <Image source={require('./assets/orca.png')}/>
+            <Image source={require('./assets/orca.png')} />
           </View>
         );
     }
@@ -170,138 +175,150 @@ export default class App extends React.Component {
       <ImageBackground
         source={require('./assets/fondo.png')}
         style={styles.container}>
-
         <View style={styles.containerLogo}>
-        <Image style={styles.logo}source={require('./assets/img2.png')} />
-        </View>  
-        
+          <Image style={styles.logo} source={require('./assets/img2.png')} />
+        </View>
+
         <View style={styles.containerGameCurrent}>
           <Text style={styles.gamerCurrent}>Es el turno de</Text>
           {this.renderGamerCurrent()}
         </View>
-        <View style={{padding: 15, borderRadius: 20, backgroundColor: '#FFFFFF' }}>
-        <View style={{ padding: 15,backgroundColor: '#FFFFFF', boxShadow:'rgba(0, 0, 0, 0.25)', borderRadius: 20, borderStyle: 'dashed', borderColor:'#7997B5', borderWidth: 2}}>
-          <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(0, 0)}
-              style={[
-                styles.tile,
-                {
-                  borderLeftWidth: 0,
-                  borderTopWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(0, 0)}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(0, 1)}
-              style={[
-                styles.tile,
-                {
-                  borderTopWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(0, 1)}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(0, 2)}
-              style={[
-                styles.tile,
-                {
-                  borderRightWidth: 0,
-                  borderTopWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(0, 2)}
-            </TouchableOpacity>
-          </View>
+        <View
+          style={{padding: 15, borderRadius: 20, backgroundColor: '#FFFFFF'}}>
+          <View
+            style={{
+              padding: 15,
+              backgroundColor: '#FFFFFF',
+              boxShadow: 'rgba(0, 0, 0, 0.25)',
+              borderRadius: 20,
+              borderStyle: 'dashed',
+              borderColor: '#7997B5',
+              borderWidth: 2,
+            }}>
+            <View style={{flexDirection: 'row'}}>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(0, 0)}
+                style={[
+                  styles.tile,
+                  {
+                    borderLeftWidth: 0,
+                    borderTopWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(0, 0)}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(0, 1)}
+                style={[
+                  styles.tile,
+                  {
+                    borderTopWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(0, 1)}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(0, 2)}
+                style={[
+                  styles.tile,
+                  {
+                    borderRightWidth: 0,
+                    borderTopWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(0, 2)}
+              </TouchableOpacity>
+            </View>
 
-          <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(1, 0)}
-              style={[
-                styles.tile,
-                {
-                  borderLeftWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(1, 0)}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(1, 1)}
-              style={[
-                styles.tile,
-                {alignItems: 'center', justifyContent: 'center'},
-              ]}>
-              {this.renderIcon(1, 1)}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(1, 2)}
-              style={[
-                styles.tile,
-                {
-                  borderRightWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(1, 2)}
-            </TouchableOpacity>
-          </View>
+            <View style={{flexDirection: 'row'}}>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(1, 0)}
+                style={[
+                  styles.tile,
+                  {
+                    borderLeftWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(1, 0)}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(1, 1)}
+                style={[
+                  styles.tile,
+                  {alignItems: 'center', justifyContent: 'center'},
+                ]}>
+                {this.renderIcon(1, 1)}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(1, 2)}
+                style={[
+                  styles.tile,
+                  {
+                    borderRightWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(1, 2)}
+              </TouchableOpacity>
+            </View>
 
-          <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(2, 0)}
-              style={[
-                styles.tile,
-                {
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(2, 0)}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(2, 1)}
-              style={[
-                styles.tile,
-                {
-                  borderBottomWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(2, 1)}
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.onTilePress(2, 2)}
-              style={[
-                styles.tile,
-                {
-                  borderRightWidth: 0,
-                  borderBottomWidth: 0,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                },
-              ]}>
-              {this.renderIcon(2, 2)}
-            </TouchableOpacity>
+            <View style={{flexDirection: 'row'}}>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(2, 0)}
+                style={[
+                  styles.tile,
+                  {
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(2, 0)}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(2, 1)}
+                style={[
+                  styles.tile,
+                  {
+                    borderBottomWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(2, 1)}
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.onTilePress(2, 2)}
+                style={[
+                  styles.tile,
+                  {
+                    borderRightWidth: 0,
+                    borderBottomWidth: 0,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  },
+                ]}>
+                {this.renderIcon(2, 2)}
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
         </View>
 
         <TouchableOpacity onPress={this.playAgain}>
-          <Image style={styles.button} source={require('./assets/boton_start.png')} />
+          <Image
+            style={styles.button}
+            source={require('./assets/boton_start.png')}
+          />
         </TouchableOpacity>
       </ImageBackground>
     );
@@ -314,17 +331,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  containerLogo:{
+  containerLogo: {
     display: 'flex',
     justifyContent: 'flex-start',
     width: '80%',
     marginBottom: 40,
   },
-  logo:{
+  logo: {
     width: 175,
     height: 45,
   },
- 
+
   tile: {
     borderWidth: 1,
     width: 80,
@@ -336,15 +353,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
     alignItems: 'center',
     width: 150,
-    height: 50
-    
+    height: 50,
   },
   containerGameCurrent: {
     display: 'flex',
     flexDirection: 'row',
     marginBottom: 50,
     alignItems: 'center',
-    
   },
   gamerCurrent: {
     fontSize: 40,
@@ -357,9 +372,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 15
+    marginLeft: 15,
   },
-
-  
- 
 });
